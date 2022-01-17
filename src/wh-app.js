@@ -1,4 +1,6 @@
-import { html, css, LitElement } from 'lit'
+import { html, css, LitElement } from 'lit';
+
+import { WhTile } from './components/wh-tile';
 
 /**
  * An example element.
@@ -6,7 +8,7 @@ import { html, css, LitElement } from 'lit'
  * @slot - This element has a slot
  * @csspart button - The button
  */
-export class MyElement extends LitElement {
+export class WhApp extends LitElement {
   static get styles() {
     return css`
       :host {
@@ -40,6 +42,7 @@ export class MyElement extends LitElement {
 
   render() {
     return html`
+      <wh-tile letter="B" evaluation="absent"></wh-tile>
       <h1>Hello, ${this.name}!</h1>
       <button @click=${this._onClick} part="button">
         Click Count: ${this.count}
@@ -53,4 +56,4 @@ export class MyElement extends LitElement {
   }
 }
 
-window.customElements.define('my-element', MyElement)
+window.customElements.define('wh-app', WhApp);
